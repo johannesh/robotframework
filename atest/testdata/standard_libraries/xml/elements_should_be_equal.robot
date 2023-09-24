@@ -66,6 +66,12 @@ Exclude children
     ${TEST}    <test name="root">\n${SPACE*4}\n${SPACE*4}</test>    exclude_children=yes
     ${TEST}    <test name="root"/>                                  exclude    normalize
 
+Unordered children
+    [Template]    NONE
+    Elements should be equal    <a><b><d/><b/><c></a>    <a><c><b><d/></b></a>     ignore_order=true
+
+
+
 *** Keywords ***
 Element should be equal to itself
     [Arguments]    ${source}
